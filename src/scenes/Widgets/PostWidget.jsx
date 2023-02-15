@@ -44,7 +44,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+    const response = await fetch(`https://mern-social-kalpchaudhary.herokuapp.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ const PostWidget = ({
 
     if (comment === "") return;
 
-    const response = await fetch(`http://localhost:3001/posts/${postId}`, {
+    const response = await fetch(`https://mern-social-kalpchaudhary.herokuapp.com/posts/${postId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -91,7 +91,7 @@ const PostWidget = ({
       </Typography>
       {picturePath && (
         <img
-          src={`http://localhost:3001/assets/${picturePath}`}
+          src={`https://mern-social-kalpchaudhary.herokuapp.com/assets/${picturePath}`}
           width="100%"
           height="auto"
           alt="post"

@@ -29,7 +29,7 @@ const Friend = ({ friendId, name, subTitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `https://mern-social-kalpchaudhary.herokuapp.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },

@@ -40,7 +40,7 @@ export function AddStoryModalWidget({ open, handleClose }) {
       formData.append("storyImageUrl", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/story`, {
+    const response = await fetch(`https://mern-social-kalpchaudhary.herokuapp.com/story`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

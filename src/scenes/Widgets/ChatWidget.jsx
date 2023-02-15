@@ -34,7 +34,7 @@ const ChatWidget = ({ friendId, userId }) => {
 
   const getConversation = async () => {
     const response = await fetch(
-      `http://localhost:3001/conversations/${userId}`,
+      `https://mern-social-kalpchaudhary.herokuapp.com/conversations/${userId}`,
       {
         method: "GET",
         headers: {
@@ -56,7 +56,7 @@ const ChatWidget = ({ friendId, userId }) => {
     if (conversationId === "") return;
 
     const response = await fetch(
-      `http://localhost:3001/messages/${conversationId}`,
+      `https://mern-social-kalpchaudhary.herokuapp.com/messages/${conversationId}`,
       {
         method: "GET",
         headers: {
@@ -84,7 +84,7 @@ const ChatWidget = ({ friendId, userId }) => {
       text: newMessage,
     });
 
-    const response = await fetch(`http://localhost:3001/messages`, {
+    const response = await fetch(`https://mern-social-kalpchaudhary.herokuapp.com/messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

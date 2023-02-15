@@ -11,7 +11,7 @@ const StoryWidget = ({ userId, picturePath }) => {
   const [friendsStory, setFriendsStory] = useState([]);
 
   const getUserStory = async () => {
-    const response = await fetch(`http://localhost:3001/story/${userId}`, {
+    const response = await fetch(`https://mern-social-kalpchaudhary.herokuapp.com/story/${userId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const StoryWidget = ({ userId, picturePath }) => {
 
   const getFriendsStory = async () => {
     const response = await fetch(
-      `http://localhost:3001/story/${userId}/friends`,
+      `https://mern-social-kalpchaudhary.herokuapp.com/story/${userId}/friends`,
       {
         method: "GET",
         headers: {
