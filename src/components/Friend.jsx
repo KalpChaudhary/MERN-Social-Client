@@ -27,6 +27,11 @@ const Friend = ({ friendId, name, subTitle, userPicturePath }) => {
   const isFriend = friends.find((friend) => friend._id === friendId);
   // console.log(friends);
 
+  const senderReceiverId = {
+    senderId: _id,
+    receiverId: friendId,
+  };
+
   const patchFriend = async () => {
     const response = await fetch(
       `https://mern-social-kalpchaudhary.herokuapp.com/users/${_id}/${friendId}`,
@@ -34,6 +39,18 @@ const Friend = ({ friendId, name, subTitle, userPicturePath }) => {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
         "Content-Type": "application/json",
+      }
+    );
+
+
+    //creating conversation id
+    await fetch(
+      `https://mern-social-kalpchaudhary.herokuapp.com/conversations/`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        "Content-Type": "application/json",
+        body: JSON.stringify(senderReceiverId),
       }
     );
 
