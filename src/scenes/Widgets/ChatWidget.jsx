@@ -99,7 +99,7 @@ const ChatWidget = ({ friendId, userId }) => {
   };
 
   useEffect(() => {
-    socket.current = io("https://sparkle-chat-server.herokuapp.com");
+    socket.current = io("ws://sparkle-chat-server.herokuapp.com/");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
